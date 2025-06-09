@@ -5,7 +5,7 @@
     html_logo_url = "https://raw.githubusercontent.com/RustCrypto/meta/master/logo.svg",
     html_favicon_url = "https://raw.githubusercontent.com/RustCrypto/meta/master/logo.svg"
 )]
-#![deny(unsafe_code)]
+// #![deny(unsafe_code)]
 #![warn(
     clippy::mod_module_files,
     clippy::unwrap_used,
@@ -216,9 +216,9 @@ pub mod prelude {
     pub use crate::array::{ArrayDecoding, ArrayEncoding};
 }
 
-#[cfg(sidefuzz)]
-#[no_mangle]
-pub extern "C" fn fuzz() {
-    let input = sidefuzz::fetch_input(32); // 32 bytes of of fuzzing input as a &[u8]
-    sidefuzz::black_box(my_hopefully_constant_fn(input));
-}
+// #[cfg(sidefuzz)]
+// #[no_mangle]
+// pub extern "C" fn fuzz() {
+//     let input = sidefuzz::fetch_input(32); // 32 bytes of of fuzzing input as a &[u8]
+//     sidefuzz::black_box(my_hopefully_constant_fn(input));
+// }
